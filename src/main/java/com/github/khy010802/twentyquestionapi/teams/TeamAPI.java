@@ -1,5 +1,6 @@
 package com.github.khy010802.twentyquestionapi.teams;
 
+import com.sun.istack.internal.Nullable;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
@@ -20,9 +21,10 @@ public class TeamAPI {
      * @param teamName 팀 이름
      * @return Teams enum
      */
+    @Nullable
     public static Teams getTeamByTeamName(String teamName){
-        return Teams.TEAM_TO_TEAMS_HASH.get(teamName);
-    }
+        return Teams.TEAMNAME_TO_TEAMS_HASH.get(teamName);
+
 
     /**
      * 해당 플레이어를 팀에 추가합니다.
@@ -64,6 +66,20 @@ public class TeamAPI {
                 players.add(p);
         }
         return players;
+    }
+
+    /**
+     * 해당 플레이어가 소속된 팀을 구합니다.
+     * @param p 플레이어
+     * @return 해당 플레이어의 팀
+     */
+    @Nullable
+    public static Teams getTeam(Player p){
+        Scoreboard sb = Bukkit.getScoreboardManager().getMainScoreboard();
+        Team t = sb.getEntryTeam(p.getUniqueId().toString());
+        if(t == null)
+            return null;
+        return Teams.TEAM_TO_TEAMS_HASH.get(t);
     }
 
 

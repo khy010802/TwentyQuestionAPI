@@ -59,7 +59,7 @@ public class VarCommand implements CommandExecutor, TabCompleter {
         String varName = args[1];
         try {
             int newValue = Integer.parseInt(args[2]);
-            Variables varType = Variables.valueOf(varName);
+            Variables varType = Variables.valueOf(varName.toUpperCase());
             VarAPI.setValue(varType, newValue);
             sender.sendMessage("set value of " + varType + " to : " + varType.getValue());
         } catch(NumberFormatException io){

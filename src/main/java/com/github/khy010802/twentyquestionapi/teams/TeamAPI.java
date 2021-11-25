@@ -21,7 +21,6 @@ public class TeamAPI {
      * @param teamName 팀 이름
      * @return Teams enum
      */
-    @Nullable
     public static Teams getTeamByTeamName(String teamName) {
         return Teams.TEAMNAME_TO_TEAMS_HASH.get(teamName);
     }
@@ -73,7 +72,6 @@ public class TeamAPI {
      * @param p 플레이어
      * @return 해당 플레이어의 팀
      */
-    @Nullable
     public static Teams getTeam(Player p){
         Scoreboard sb = Bukkit.getScoreboardManager().getMainScoreboard();
         Team t = sb.getEntryTeam(p.getUniqueId().toString());

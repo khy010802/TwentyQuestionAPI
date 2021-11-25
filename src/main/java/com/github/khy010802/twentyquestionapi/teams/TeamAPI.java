@@ -22,9 +22,9 @@ public class TeamAPI {
      * @return Teams enum
      */
     @Nullable
-    public static Teams getTeamByTeamName(String teamName){
+    public static Teams getTeamByTeamName(String teamName) {
         return Teams.TEAMNAME_TO_TEAMS_HASH.get(teamName);
-
+    }
 
     /**
      * 해당 플레이어를 팀에 추가합니다.
@@ -81,7 +81,4 @@ public class TeamAPI {
             return null;
         return Teams.TEAM_TO_TEAMS_HASH.get(t);
     }
-
-
-
 }

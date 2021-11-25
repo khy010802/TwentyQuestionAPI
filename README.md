@@ -19,11 +19,10 @@ TeamAPI.addPlayer(player, Teams.PARTICIPANTS);
 
 ### 변수 API : 현재 남은 행동 포인트 구하기
 ```
-Variables.POINT.getValue();
+int value = Variables.POINT.getValue();
 ```
 
 ### 변수 API : 돈 100원 추가
 ```
-int money = Variables.MONEY.getValue();
-Variables.MONEY.getScore().setScore(money + value);
+VarAPI.addValue(Variables.MONEY, 100);
 ```

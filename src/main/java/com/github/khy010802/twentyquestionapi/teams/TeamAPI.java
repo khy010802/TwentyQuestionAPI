@@ -1,6 +1,5 @@
 package com.github.khy010802.twentyquestionapi.teams;
 
-import com.sun.istack.internal.Nullable;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;

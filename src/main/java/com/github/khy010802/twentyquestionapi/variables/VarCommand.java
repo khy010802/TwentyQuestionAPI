@@ -60,7 +60,7 @@ public class VarCommand implements CommandExecutor, TabCompleter {
         try {
             int newValue = Integer.parseInt(args[2]);
             Variables varType = Variables.valueOf(varName);
-            varType.getScore().setScore(newValue);
+            VarAPI.setValue(varType, newValue);
             sender.sendMessage("set value of " + varType + " to : " + varType.getValue());
         } catch(NumberFormatException io){
             sender.sendMessage("§cUnknown value : " + args[2]);

@@ -7,7 +7,7 @@ import org.bukkit.scoreboard.Scoreboard;
 
 public enum Variables {
 
-    MONEY("돈", "money"),
+    MONEY("상금", "money"),
     POINT("행동 포인트", "point");
 
     private final String name;

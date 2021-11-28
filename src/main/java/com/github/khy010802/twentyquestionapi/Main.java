@@ -25,7 +25,6 @@ public final class Main extends JavaPlugin {
             papi_hook.register();
         }
 
-
         cmdTeam = new TeamCommand();
         cmdVar = new VarCommand();
 

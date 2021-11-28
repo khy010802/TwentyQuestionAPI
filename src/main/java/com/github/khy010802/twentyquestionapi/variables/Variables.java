@@ -40,12 +40,13 @@ public enum Variables {
     public static void register(){
         Scoreboard sb = Bukkit.getScoreboardManager().getMainScoreboard();
         for(Variables vars : Variables.values()){
-            if(sb.getObjective(vars.getDummyName()) == null){
-                Objective obj = sb.registerNewObjective(vars.getDummyName(), "dummy");
+            Objective obj = sb.getObjective(vars.getDummyName());
+            if(obj == null){
+                obj = sb.registerNewObjective(vars.getDummyName(), "dummy");
                 obj.setDisplayName(vars.getName());
                 obj.getScore(vars.getName()).setScore(0);
-                vars.setObjective(obj);
             }
+            vars.setObjective(obj);
         }
     }
 

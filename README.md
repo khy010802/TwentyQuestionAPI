@@ -3,6 +3,14 @@
 ## 빌드
 [![](https://jitpack.io/v/khy010802/TwentyQuestionAPI.svg)](https://jitpack.io/#khy010802/TwentyQuestionAPI)
 
+## PlaceHolderAPI 지원
+```
+String money = "%tqvar_money%원";
+String point = "%tqvar_point%포인트";
+Bukkit.broadcastMessage(PlaceholderAPI.setPlaceholders(null, money));
+Bukkit.broadcastMessage(PlaceholderAPI.setPlaceholders(null, point));
+```
+
 ## 용법
 
 ### 팀API : 미니게임 참가자 구하기

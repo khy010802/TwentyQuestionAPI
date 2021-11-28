@@ -21,6 +21,7 @@ public final class Main extends JavaPlugin {
         Variables.register();
 
         if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null){
+            papi_hook = new PlaceHolderAPIHook();
             papi_hook.register();
         }
 

@@ -1,6 +1,7 @@
 name: TwentyQuestionAPI
 version: @version@
 main: com.github.khy010802.twentyquestionapi.Main
+softdepend: [PlaceholderAPI]
 commands:
   tqteam:
   tqvar:

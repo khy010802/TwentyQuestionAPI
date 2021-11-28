@@ -74,7 +74,7 @@ public class TeamCommand implements CommandExecutor, TabCompleter {
         Teams t = TeamAPI.getTeamByTeamName(team);
 
         if(t == null){
-            sender.sendMessage("§cNo team named  " + team);
+            sender.sendMessage("§cNo team named " + team);
         } else if(p == null){
             sender.sendMessage("§cNo player named " + name);
         } else {

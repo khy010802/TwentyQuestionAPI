@@ -7,7 +7,6 @@ import org.bukkit.scoreboard.Team;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class TeamAPI {
 
@@ -32,7 +31,7 @@ public class TeamAPI {
      */
     public static void addPlayer(Player p, Teams t){
         removePlayer(p);
-        t.getTeam().addEntry(p.getUniqueId().toString());
+        t.getTeam().addEntry(p.getName());
     }
 
     /**
@@ -42,10 +41,9 @@ public class TeamAPI {
      * @return 성공 여부(false 리턴 시, 해당 플레이어가 소속된 팀이 없었다는 것)
      */
     public static boolean removePlayer(Player p){
-        String uuid = p.getUniqueId().toString();
-        Team team = SCOREBOARD.getEntryTeam(uuid);
+        Team team = SCOREBOARD.getEntryTeam(p.getName());
         if(team != null){
-            team.removeEntry(uuid);
+            team.removeEntry(p.getName());
         }
         return team != null;
     }
@@ -61,14 +59,6 @@ public class TeamAPI {
         for(String entry : t.getEntries()){
             if(Bukkit.getPlayer(entry) != null){
                 players.add(Bukkit.getPlayer(entry));
-            } else {
-                try{
-                    Player p = Bukkit.getPlayer(UUID.fromString(entry));
-                    if(p != null)
-                        players.add(p);
-                } catch(Exception ignored){
-
-                }
             }
         }
         return players;
@@ -81,7 +71,7 @@ public class TeamAPI {
      */
     public static Teams getTeam(Player p){
         Scoreboard sb = Bukkit.getScoreboardManager().getMainScoreboard();
-        Team t = sb.getEntryTeam(p.getUniqueId().toString());
+        Team t = sb.getEntryTeam(p.getName());
         if(t == null)
             t = sb.getEntryTeam(p.getName());
         if(t == null)

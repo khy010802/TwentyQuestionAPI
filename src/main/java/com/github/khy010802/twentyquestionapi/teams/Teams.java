@@ -59,6 +59,9 @@ public enum Teams {
             Team team = (sb.getTeam(t.getTeamName()) != null) ? sb.getTeam(t.getTeamName()) : sb.registerNewTeam(t.getTeamName());
             team.setColor(t.getTeamColor());
             team.setPrefix("[" + t.getName() + "]");
+            team.setAllowFriendlyFire(true);
+            team.setCanSeeFriendlyInvisibles(true);
+            team.setOption(Team.Option.COLLISION_RULE, Team.OptionStatus.FOR_OWN_TEAM);
             t.setTeam(team);
             TEAM_TO_TEAMS_HASH.put(team, t);
             TEAMNAME_TO_TEAMS_HASH.put(t.getTeamName(), t);

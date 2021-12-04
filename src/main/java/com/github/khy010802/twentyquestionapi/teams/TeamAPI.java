@@ -59,9 +59,13 @@ public class TeamAPI {
         List<Player> players = new ArrayList<>();
         Team t = team.getTeam();
         for(String entry : t.getEntries()){
-            Player p = Bukkit.getPlayer(UUID.fromString(entry));
-            if(p != null)
-                players.add(p);
+            if(Bukkit.getPlayer(entry) != null){
+                players.add(Bukkit.getPlayer(entry));
+            } else {
+                Player p = Bukkit.getPlayer(UUID.fromString(entry));
+                if(p != null)
+                    players.add(p);
+            }
         }
         return players;
     }

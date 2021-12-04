@@ -2,13 +2,10 @@ package com.github.khy010802.twentyquestionapi.teams;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Color;
-import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 
 import java.util.HashMap;
-import java.util.List;
 
 public enum Teams {
 

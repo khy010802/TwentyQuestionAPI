@@ -28,7 +28,9 @@ public abstract class MinigameEvent extends Event implements Cancellable {
     public enum Games {
 
         RGJUMP("무궁화 꽃이 뛰었습니다"),
-        FMONEY("날아라 돈다발");
+        FMONEY("날아라 돈다발"),
+        PROBST("문제적 스트리머"),
+        POORHT("가난한 사냥꾼");
 
         private final String name;
         Games(String name){

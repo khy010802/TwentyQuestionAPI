@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.khy010802'
-version = '1.9-SNAPSHOT'
+version = '2.0-SNAPSHOT'
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'

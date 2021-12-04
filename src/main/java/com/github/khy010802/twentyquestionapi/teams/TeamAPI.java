@@ -79,7 +79,9 @@ public class TeamAPI {
         Scoreboard sb = Bukkit.getScoreboardManager().getMainScoreboard();
         Team t = sb.getEntryTeam(p.getUniqueId().toString());
         if(t == null)
-            return null;
+            t = sb.getEntryTeam(p.getName());
+        if(t == null)
+            return Teams.PLAYERS;
         return Teams.TEAM_TO_TEAMS_HASH.get(t);
     }
 }
